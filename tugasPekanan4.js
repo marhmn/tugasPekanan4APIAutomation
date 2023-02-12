@@ -6,13 +6,18 @@ describe("Authorization - Login", function()
     it (
         "Sukses Login", async function()
         {
-        const response = await request.post("/authentications").send
+        const response = await request.post("/authentications")
+        .send
             (
                 {
-                    email: "rohman@x.com",
-                    password: "123adsfadf@"
-                }
+                    "email": "rohman@ex.com",
+                    "password": "123adsfadf@"
+                 }
+                 
             );
+
+            expect(response.status).to.eql(201);
+
         }
     );
 }
