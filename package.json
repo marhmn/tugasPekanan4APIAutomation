@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/marhmn/tugasPekanan4APIAutomation/issues"
   },
-  "homepage": "https://github.com/marhmn/tugasPekanan4APIAutomation#readme"
+  "homepage": "https://github.com/marhmn/tugasPekanan4APIAutomation#readme",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "jsonschema": "^1.4.1",
+    "supertest": "^6.3.3"
+  }
 }
