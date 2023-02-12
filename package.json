@@ -1,0 +1,19 @@
+{
+  "name": "tugaspekanan4apiautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tugasPekanan4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marhmn/tugasPekanan4APIAutomation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marhmn/tugasPekanan4APIAutomation/issues"
+  },
+  "homepage": "https://github.com/marhmn/tugasPekanan4APIAutomation#readme"
+}
