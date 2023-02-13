@@ -1,30 +1,30 @@
 const request = require("supertest")("https://kasir-api.belajarqa.com");
 const expect = require("chai").expect;
-
+var token="";
 describe("Authorization - Login", function()
 {
-    it ("Sukses Login", async function(){
+    it ("TC_Sukses Login", async function(){
         const response = await request.post("/authentications")
         .send
             (
                 {
-                    "email": "rohman@ex.com",
-                    "password": "123adsfadf@"
-                 }
-                 
+                    email: "rohman@ex.com",
+                    password: "rohman2023"
+                 } 
             );
-
             expect(response.status).to.eql(201);
+
+               token = response.body.data.accessToken;
 
         });
 
-    it ("Gagal Login", async function(){
+    it ("TC_Gagal Login", async function(){
         const response = await request.post("/authentications")
         .send
             (
                 {
-                    "email": "rohman@ex.com",
-                    "password": "123adsfadf@"
+                    email: "rohman@ex.com",
+                    password: "rohman2023"
                  }
                  
             );
@@ -32,6 +32,23 @@ describe("Authorization - Login", function()
             expect(response.status).to.eql(401);
 
         });
+
+        it ("TC_Add Categories", async function(){
+            const response = await request.post("/categories")
+            .set("Authorization", "Bearer " + token)
+            .send
+                (
+                    {
+                        name: "Minuman",
+                        description: "Kopiko Luckyday"
+                    }
+                     
+                     
+                );
+    
+                expect(response.status).to.eql(201);
+                
+            });
 }
 
 );
