@@ -24,7 +24,7 @@ describe("Authorization - Login", function()
             (
                 {
                     email: "rohman@ex.com",
-                    password: "rohman2023"
+                    password: "rohman2022"
                  }
                  
             );
