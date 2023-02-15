@@ -33,9 +33,32 @@ describe("Authorization - Login", function()
 
         });
 
-        it ("TC_Add Categories", async function(){
+        
+}
+
+);
+
+describe("Categories - Add", function()
+{
+          
+    it ("TC_Add Categories", async function(){
+        const response = await request.post("/categories")
+        .set("Authorization", "Bearer " + token)
+        .send
+            (
+                {
+                    name: "Minuman",
+                    description: "Kopiko Luckyday"
+                }
+                 
+            );
+
+            expect(response.status).to.eql(201);
+            
+        });
+        it ("TC_ gagal Add Categories", async function(){
             const response = await request.post("/categories")
-            .set("Authorization", "Bearer " + token)
+            .set("Authorization", "Bearer ")
             .send
                 (
                     {
@@ -43,12 +66,14 @@ describe("Authorization - Login", function()
                         description: "Kopiko Luckyday"
                     }
                      
-                     
                 );
     
-                expect(response.status).to.eql(201);
+                expect(response.status).to.eql(401);
                 
             });
+        
 }
+
+
 
 );
